@@ -117,12 +117,15 @@ function tick() {
       outputMessage.hidden = true;
       outputData.parentElement.hidden = false;
 
+      //outputData.innerText = code.data  +" happy coding";
+
       if (studentsList.includes(code.data)) {
           console.log(code.data + "es alumna");
           const studentName = code.data;
-          updateDbAsistence(studentName, database);     
+          updateDbAsistence(studentName, database);
       }
       else{
+        outputData.parentElement=code.data+"No es alumna";
         console.log(code.data + " NO es alumna");
       }
 
@@ -132,15 +135,11 @@ function tick() {
     }
 
   }
-  //video.stop(code.data);
 
-//console.log(dataName);
-  
-  //requestAnimationFrame(tick);
 }
 
 setInterval(()=>{requestAnimationFrame(tick)}, 50);
 
 (function main() {
-  
+
 })();
